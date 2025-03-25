@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // 🔥 Importa esto
 import { RouterModule } from '@angular/router'; // 🔥 Si usas routerLink
-import { LogoutComponent } from '../../logout.component';
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-privatehome',
