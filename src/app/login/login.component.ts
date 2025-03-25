@@ -21,7 +21,7 @@ export class LoginComponent {
   onSubmit() {
     this.authService.login(this.email, this.password).subscribe(
       response => {
-        console.log('Login exitoso', response);
+        console.log('Ha iniciado sesion correctamente', response);
         this.router.navigate(['/dashboard']); // Redirigir correctamente
       },
       error => {
