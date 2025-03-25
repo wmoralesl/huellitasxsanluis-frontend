@@ -13,8 +13,15 @@ export class AuthService {
 
   login(email: string, password: string): Observable<any> {
     const body = { email, password };
-    return this.http.post(`${this.apiUrl}/api/auth/login`, body);
+    return this.http.post(`${this.apiUrl}/api/auth/login`, body).pipe(
+      tap((response: any) => {
+        if (response.token) {
+          localStorage.setItem('token', response.token); // Guarda el token en el localStorage
+        }
+      })
+    );
   }
+  
 
   logout(): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/auth/logout`, {}).pipe(
