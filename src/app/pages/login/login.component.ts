@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from '../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
-  standalone: true,  // Marca el componente como independiente
-  imports: [FormsModule, HttpClientModule, CommonModule],  // Importa los módulos necesarios
+  standalone: true, // Indica que es un componente standalone
+  imports: [FormsModule, CommonModule, RouterModule], // Añadir RouterModule
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -22,10 +21,10 @@ export class LoginComponent {
     this.authService.login(this.email, this.password).subscribe(
       response => {
         console.log('Ha iniciado sesión correctamente', response);
-        this.router.navigate(['/dashboard']); // Redirigir correctamente
+        this.router.navigate(['/dashboard']); // Redirige correctamente
       },
       error => {
-        console.error('Error al iniciar sesion', error);
+        console.error('Error al iniciar sesión', error);
       }
     );
   }
