@@ -25,7 +25,7 @@ export class LoginComponent {
         this.router.navigate(['/dashboard']); // Redirigir correctamente
       },
       error => {
-        console.error('Error en el login', error);
+        console.error('Error al iniciar sesion', error);
       }
     );
   }
