@@ -38,5 +38,13 @@ export class AuthService {
     return !!localStorage.getItem('token'); // Verifica si hay un token
   }
 
+  getUserData(): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = { Authorization: `Bearer ${token}` }; // Crea el encabezado con el token
+    
+    return this.http.get(`${this.apiUrl}/api/auth/me`, { headers }); // Hace la solicitud GET para obtener los datos del usuario
+  }
+
+
 
 }

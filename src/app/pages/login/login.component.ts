@@ -6,7 +6,7 @@ import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
-  standalone: true, // Indica que es un componente standalone
+  standalone: true,
   imports: [FormsModule, CommonModule, RouterModule], // Añadir RouterModule
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']

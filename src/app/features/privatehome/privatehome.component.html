@@ -1,2 +1,11 @@
-<p>privatehome works!</p>
+<div *ngIf="userData; else loading">
+    <h2>Bienvenido, {{ userData.username }}</h2>
+    <p>Email: {{ userData.email }}</p>
+    <p>Rol: {{ userData.role }}</p>
+  </div>
+  
+  <ng-template #loading>
+    <p>Cargando información del usuario...</p>
+  </ng-template>
+  
 <app-logout></app-logout>
