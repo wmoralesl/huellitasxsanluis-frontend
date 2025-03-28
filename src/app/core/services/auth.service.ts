@@ -22,9 +22,11 @@ export class AuthService {
     );
   }
   
-
   logout(): Observable<any> {
-    return this.http.post(`${this.apiUrl}/api/auth/logout`, {}).pipe(
+    const token = localStorage.getItem('token'); // Obtiene el token de localStorage
+    const headers = { Authorization: `Bearer ${token}` }; // Crea el encabezado con el token
+    
+    return this.http.post(`${this.apiUrl}/api/auth/logout`, {}, { headers }).pipe( // Envía el token en los encabezados
       tap(() => {
         localStorage.removeItem('token'); // Elimina el token del localStorage
         this.router.navigate(['/login']); // Redirige al login
