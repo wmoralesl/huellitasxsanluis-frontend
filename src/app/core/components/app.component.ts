@@ -5,9 +5,8 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'], // Opcional si tienes estilos
-  imports: [CommonModule, RouterOutlet], 
+  template: `<router-outlet></router-outlet>`, // No tiene contenido propio, solo gestiona las rutas
+  imports: [CommonModule, RouterOutlet]
 })
 export class AppComponent {
   title = 'angular-login';
