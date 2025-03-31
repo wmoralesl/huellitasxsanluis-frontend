@@ -6,6 +6,7 @@ import { PetsComponent } from '../../pages/pets/pets.component';
 import { AboutUsComponent } from '../../pages/about-us/about-us.component';
 import { PublicLayoutComponent } from '../layouts/public-layout/public-layout.component';
 import { PrivateLayoutComponent } from '../layouts/private-layout/private-layout.component';
+import { authGuard } from '../services/interceptor/auth.guard';
 
 export const routes: Routes = [
 
@@ -23,7 +24,12 @@ export const routes: Routes = [
     path: 'dashboard',
     component: PrivateLayoutComponent,
     children:[
-      { path: '**', component: PrivatehomeComponent}, // Redirige cualquier ruta desconocida
+      { 
+        path: '**',
+        component: PrivatehomeComponent,
+        canActivate: [authGuard] 
+      }
+        , // Redirige cualquier ruta desconocida
     ]
   },
 ];
