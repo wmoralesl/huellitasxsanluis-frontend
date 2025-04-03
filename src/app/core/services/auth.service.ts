@@ -58,13 +58,15 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    return typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   }
 
   // Métodos privados de ayuda
   private setAuthData(token: string): void {
     try {
-      localStorage.setItem('token', token);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('token', token);
+      }
       // Si el token contiene expiración, podrías guardarla también
       // const tokenData = this.parseJwt(token);
       // if (tokenData.exp) {
@@ -76,7 +78,9 @@ export class AuthService {
   }
 
   private clearAuthData(): void {
-    localStorage.removeItem('token');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+    }
     // localStorage.removeItem('token_exp');
   }
 
