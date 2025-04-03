@@ -18,8 +18,8 @@ export class AnimalsService {
   }
 
   // Obtener detalles de una mascota específica
-  getAnimalById(user_id: number): Observable<Animal> {
-    return this.http.get<Animal>(`${this.apiUrl}/${user_id}`);
+  getAnimalById(animal_id: number): Observable<Animal> {
+    return this.http.get<Animal>(`${this.apiUrl}/${animal_id}`);
   }
 
   // Registrar una nueva mascota (requiere autenticación)
@@ -31,18 +31,18 @@ export class AnimalsService {
   }
 
   // Actualizar una mascota existente
-  updateAnimal(user_id: number, animal: Animal, token: string): Observable<Animal> {
+  updateAnimal(animal_id: number, animal: Animal, token: string): Observable<Animal> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.put<Animal>(`${this.apiUrl}/${user_id}`, animal, { headers });
+    return this.http.put<Animal>(`${this.apiUrl}/${animal_id}`, animal, { headers });
   }
 
   // Eliminar (desactivar) una mascota (solo admin)
-  deleteAnimal(user_id: number, token: string): Observable<any> {
+  deleteAnimal(animal_id: number, token: string): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.delete(`${this.apiUrl}/${user_id}`, { headers });
+    return this.http.delete(`${this.apiUrl}/${animal_id}`, { headers });
   }
 }
