@@ -1,1 +1,29 @@
 <p>pets works!</p>
+<div class="animals-container">
+    <h2>Listado de Mascotas</h2>
+    
+    <!-- Mensaje de carga -->
+    <div *ngIf="isLoading" class="loading">
+      Cargando mascotas...
+    </div>
+  
+    <!-- Mensaje de error -->
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Lista de mascotas -->
+    <ul *ngIf="!isLoading && animals.length > 0">
+      <li *ngFor="let animal of animals">
+        <h3>{{ animal.name }}</h3>
+        <p>Especie: {{ animal.species }}</p>
+        <p>Raza: {{ animal.breed || 'No especificado' }}</p>
+        <p>Edad: {{ animal.age || 'No especificada' }}</p>
+      </li>
+    </ul>
+  
+    <!-- Mensaje cuando no hay mascotas -->
+    <div *ngIf="!isLoading && animals.length === 0">
+      No se encontraron mascotas registradas.
+    </div>
+  </div>
