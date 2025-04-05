@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // para ngIf, ngFor y otras directivas comunes
 import { RouterModule } from '@angular/router'; // routerLink para navegación
 import { LogoutComponent } from '../logout/logout.component';
-import { AuthService } from '../../core/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-privatehome',

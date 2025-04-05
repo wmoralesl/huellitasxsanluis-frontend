@@ -1,6 +1,6 @@
 // src/app/components/logout/logout.component.ts
 import { Component } from '@angular/core';
-import { AuthService } from '../../core/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

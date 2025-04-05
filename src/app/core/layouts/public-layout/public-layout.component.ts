@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavbarPublicComponent } from '../../components/navbar-public/navbar-public.component';
-import { FooterPublicComponent } from '../../components/footer-public/footer-public.component';
+import { NavbarPublicComponent } from '../../../components/navbar-public/navbar-public.component';
+import { FooterPublicComponent } from '../../../components/footer-public/footer-public.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-public-layout',

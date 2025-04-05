@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, tap } from 'rxjs';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';  // Importa el entorno
+import { environment } from '../../environments/environment';  // Importa el entorno
 
 @Injectable({
   providedIn: 'root'

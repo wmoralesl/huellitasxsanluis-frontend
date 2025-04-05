@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarPrivateComponent } from '../../components/navbar-private/navbar-private.component';
+import { NavbarPrivateComponent } from '../../../components/navbar-private/navbar-private.component';
 @Component({
   selector: 'app-private-layout',
   standalone: true,

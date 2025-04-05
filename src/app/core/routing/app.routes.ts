@@ -6,7 +6,7 @@ import { PetsComponent } from '../../pages/pets/pets.component';
 import { AboutUsComponent } from '../../pages/about-us/about-us.component';
 import { PublicLayoutComponent } from '../layouts/public-layout/public-layout.component';
 import { PrivateLayoutComponent } from '../layouts/private-layout/private-layout.component';
-import { authGuard } from '../services/interceptor/auth.guard';
+import { authGuard } from '../../services/interceptor/auth.guard';
 
 export const routes: Routes = [
 

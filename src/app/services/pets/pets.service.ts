@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Animal } from '../../../../models/animal.model'; // Asegúrate de tener este modelo definido
-import { environment } from '../../../../environments/environment';
+import { Animal } from '../../../models/animal.model'; // Asegúrate de tener este modelo definido
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
